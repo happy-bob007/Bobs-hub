@@ -21,7 +21,3 @@ while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") and SafePart == nil
      game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
      wait(5.2)
 end
-wait(0.1)
-if SafePart ~= nil then
-     humanoid.Health = 0
-end
