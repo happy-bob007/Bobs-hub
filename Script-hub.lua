@@ -32,12 +32,12 @@ end)
 
 Section2:NewButton("Get Elude", "Auto gets you Elude glove", function()
 
-     loadstring(game:HttpGet(("https://pastebin.com/raw/Tq9pak3d")))()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/happy-bob007/Bobs-hub/main/Auto-Elude")))()
 
 end)
 
 Section2:NewButton("Get Trap", "Press the button then you can afk", function()
 
-     loadstring(game:HttpGet(("https://pastebin.com/raw/2xdNCNJS")))()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/happy-bob007/Bobs-hub/main/Auto-Trap")))()
 
 end)
