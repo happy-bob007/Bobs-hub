@@ -17,7 +17,7 @@ safe.Parent = game.Workspace
 local SafePart = game.Workspace.SafeSpot
 game.Players.LocalPlayer.Character:MoveTo(Vector3.new(10000, 5, 0))
 wait(0.1)
-while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") and SafePart == nil do
+while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") do
      game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
      wait(5.2)
 end
