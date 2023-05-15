@@ -39,4 +39,5 @@ Section2:NewButton("Auto Trap", "Press the button then you can afk", function()
 end)
 Section2:NewButton("Stop Auto Trap", "Stops Auto Trap because Im too lazy to add a toggle", function()
      game.Workspace.SafeSpot:Destroy()
+     game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
