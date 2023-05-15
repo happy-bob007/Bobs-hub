@@ -30,14 +30,13 @@ end
 
 end)
 
-Section2:NewButton("Get Elude", "Auto gets you Elude glove", function()
-
+Section2:NewButton("Auto Get Elude", "Auto gets you Elude glove", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/happy-bob007/Bobs-hub/main/Auto-Elude")))()
-
 end)
 
-Section2:NewButton("Get Trap", "Press the button then you can afk", function()
-
+Section2:NewButton("Auto Trap", "Press the button then you can afk", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/happy-bob007/Bobs-hub/main/Auto-Trap")))()
-
+end)
+Section2:NewButton("Stop Auto Trap", "Stops Auto Trap because Im too lazy to add a toggle", function()
+     game.Workspace.SafeSpot:Destroy()
 end)
