@@ -1,0 +1,14 @@
+local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
+if teleportFunc then
+     teleportFunc([[
+if not game:IsLoaded() then
+     game.Loaded:Wait()
+end
+local localPlr = game:GetService("Players").LocalPlayer
+repeat wait() until localPlr
+game:GetService("RunService").RenderStepped:Connect(function()
+localPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-502.336, 14.228, -179.597)
+end)
+]])
+end
+game:GetService("TeleportService"):Teleport(11828384869)
