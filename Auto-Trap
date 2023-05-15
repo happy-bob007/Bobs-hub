@@ -12,10 +12,16 @@ safe.Position = Vector3.new(10000, 0, 0)
 safe.Size = Vector3.new(20,1,20)
 safe.Transparency = 0.5
 safe.Anchored = true
+safe.Name = "SafeSpot"
 safe.Parent = game.Workspace
+local SafePart = game.Workspace.SafeSpot
 game.Players.LocalPlayer.Character:MoveTo(Vector3.new(10000, 5, 0))
 wait(0.1)
-while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") do
+while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") and SafePart == nil do
      game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
      wait(5.2)
+end
+wait(0.1)
+if SafePart ~= nil then
+     humanoid.Health = 0
 end
