@@ -1,23 +1,32 @@
 local cplayer = game.Players.LocalPlayer
 local humanoid = cplayer.Character:FindFirstChildOfClass("Humanoid")
-humanoid.Health = 0
-wait(5.2)
-fireclickdetector(game.Workspace.Lobby.Brick.ClickDetector)
-wait(0.1)
-firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 0)
-firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 1)
-wait(0.5)
-local safe = Instance.new("Part")
-safe.Position = Vector3.new(10000, 0, 0)
-safe.Size = Vector3.new(20,1,20)
-safe.Transparency = 0.5
-safe.Anchored = true
-safe.Name = "SafeSpot"
-safe.Parent = game.Workspace
-local SafePart = game.Workspace.SafeSpot
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(10000, 5, 0))
-wait(0.1)
-while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") do
-     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
-     wait(5.2)
+
+if cplayer.leaderstats.Slaps.Value >= 150 then
+    humanoid.Health = 0
+    wait(5.2)
+    fireclickdetector(game.Workspace.Lobby.Brick.ClickDetector)
+    wait(0.1)
+    firetouchinterest(cplayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 0)
+    firetouchinterest(cplayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 1)
+    wait(0.5)
+    local safe = Instance.new("Part")
+    safe.Position = Vector3.new(10000, 0, 0)
+    safe.Size = Vector3.new(20, 1, 20)
+    safe.Transparency = 0.5
+    safe.Anchored = true
+    safe.Name = "SafeSpot"
+    safe.Parent = game.Workspace
+    local SafePart = game.Workspace.SafeSpot
+    cplayer.Character:MoveTo(Vector3.new(10000, 5, 0))
+    wait(0.1)
+    while not cplayer:FindFirstChild("BadgeId_" .. "2127557042") do
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.E, false, game)
+        wait(5.2)
+    end
+else
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Missing Requirement",
+        Text = "You need the Brick glove to use this.",
+        Duration = 5
+    })
 end
